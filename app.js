@@ -7,10 +7,11 @@ import userRouter from './routes/userRouter.js';
 import appRouter from './routes/appRouter.js';
 import jobRouter from './routes/jobRouter.js';
 import {dbConnection} from './database/dbConnection.js';
-import {errorMiddleware} from './middlewares/errors.js'
+import {errorMiddleware} from './middlewares/errors.js';
 
 const app = express();
 dotenv.config({path:"./config/config.env"});
+console.log("CORS allowed origin:", process.env.FRONTEND_URL);
 
 app.use(cors({
     origin: [process.env.FRONTEND_URL],
